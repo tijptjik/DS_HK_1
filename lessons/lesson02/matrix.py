@@ -7,7 +7,7 @@ m2 = [[1, 2], [3, 4], [5, 6], [7, 8]]
 
 def matrixvectormult1(m, v):
     """
-    basic function to multiply matrix with a vector 
+    basic function to multiply matrix with a vector
     prints each step for inspection.
     @param list m     matrix of m*n items
     @param list v     vector of n items
@@ -42,16 +42,16 @@ def dot(x, y):
     @param list x     matrix row n items
     @param list y     vector of n items
     """
-     assert len(x) == len(y)
-     return sum(itertools.starmap(operator.mul, itertools.izip(x, y)))
+    assert len(x) == len(y)
+    return sum(itertools.starmap(operator.mul, itertools.izip(x, y)))
 
 def matrixvectormult2(m, v):
     """
-    advanced function to multiply a matrix with a vector 
+    advanced function to multiply a matrix with a vector
     @param list m     matrix of m*n items
     @param list v     vector of n items
     """
-     return [dot(row, v) for row in m]
+    return [dot(row, v) for row in m]
 
 
 def matrixmult1(a, b):
@@ -66,8 +66,8 @@ def matrixmult1(a, b):
     cols_b = len(b[0])
 
     if cols_a != rows_b:
-      print "cannot multiply the two matrices. Incorrect dimensions."
-      return
+        print "cannot multiply the two matrices. Incorrect dimensions."
+        return
 
     # create the result matrix
     # Dimensions would be rows_a x cols_b
@@ -102,6 +102,6 @@ def is_identity_matrix(matrix):
     """
     @param list matrix     matrix to be checked for identity
     """
-    return all(val == (x == y) 
-        for y, row in enumerate(matrix)  
+    return all(val == (x == y)
+        for y, row in enumerate(matrix)
             for x, val in enumerate(row))
