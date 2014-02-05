@@ -60,14 +60,10 @@ def matrixmult1(a, b):
     @param list a     matrix of i*k items
     @param list b     matrix of k*j items
     """
-    rows_a = len(a)
-    cols_a = len(a[0])
-    rows_b = len(b)
-    cols_b = len(b[0])
+    rows_a, cols_a = len(a), len(a[0])
+    rows_b, cols_b = len(b), len(b[0])
 
-    if cols_a != rows_b:
-        print "cannot multiply the two matrices. Incorrect dimensions."
-        return
+    assert cols_a == rows_b
 
     # create the result matrix
     # Dimensions would be rows_a x cols_b
@@ -105,3 +101,9 @@ def is_identity_matrix(matrix):
     return all(val == (x == y)
         for y, row in enumerate(matrix)
             for x, val in enumerate(row))
+
+def transposeMatrix(matrix):
+    """
+    @param list matrix     matrix to be transposed
+    """
+    return [[row[i] for row in matrix] for i in range(len(matrix[0]))]
