@@ -17,7 +17,7 @@ def get_nytimes(n):
 
 lines = get_nytimes(30)
 
-print 'Writing to file %s' % (f.name)
 with open('nytime.csv','w') as f:
+  print 'Writing to file %s' % (f.name)
   for line in lines:
     f.write(line + "\n")
