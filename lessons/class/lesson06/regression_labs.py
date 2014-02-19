@@ -115,13 +115,11 @@ logm.score(input, good)
 beer_types = ['Ale', 'Stout', 'IPA', 'Lager']
 
 for t in beer_types:
-	beer[t] = beer['Name'].str.contains(t) * 1
+	beer[t] = beer['Type'].str.contains(t) * 1
 
 input = beer[ ['Reviews', 'ABV', 'Ale', 'Stout', 'IPA', 'Lager'] ].values
 
 fp_value = feature_selection.univariate_selection.f_regression(input, y)
-
-input = beer[['ABV', 'Ale', 'Stout']].values
 
 logm.fit(input, good)
 logm.predict(input)
